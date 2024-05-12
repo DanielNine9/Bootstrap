@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <style>
+      p {
+        padding: 0;
+        font-size: 14px;
+      }
+      @media (max-width: 500px) {
+        p {
+          font-size: 10px;
+        }
+      }
+      td,
+      th {
+        padding: 5px;
+        text-align: center;
+      }
+
+      .card {
+        transition: all 0.3s;
+      }
+
+      .col-sm-6.col-lg-2.col-md-4.mb-4:hover .card {
+        transform: translateY(-10px) translateX(10px);
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.05);
+      }
+      .img-wrapper::after {
+        content: "";
+        background: transparent;
+      }
+      a {
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div id="1" class="heading">
+        <div class="container d-flex justify-content-between">
+          <div class="">
+            <div class="">Hotline: 0944242140</div>
+          </div>
+          <div class="d-flex auth">
+            <div class="px-2 border-end">
+              <a href="./login.html" style="color: white; text-decoration: none"
+                >Đăng nhập</a
+              >
+            </div>
+            <div class="px-2 border-end">
+              <a
+                href="./register.html"
+                style="color: white; text-decoration: none"
+                >Đăng ký</a
+              >
+            </div>
+            <div class="px-2">
+              <a href="./cart.html" style="color: white; text-decoration: none"
+                ><i class="bi bi-cart"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bg-body-tertiary">
+        <nav class="navbar navbar-expand-lg container">
+          <div class="container-fluid">
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <a
+                class="me-auto"
+                style="
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  text-decoration: none;
+                  gap: 4px;
+                "
+                href="./home.html"
+              >
+                <div
+                  class=""
+                  style="
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                    overflow: hidden;
+                  "
+                >
+                  <img
+                    src="../images/logo.jpg"
+                    alt=""
+                    class="img-fluid"
+                    style="width: 100%; height: 100%"
+                  />
+                </div>
+                <div class="" style="word-spacing: 40px; font-size: 30px">
+                  TRAVEL
+                </div>
+              </a>
+              <ul class="navbar-nav mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a
+                    class="nav-link active"
+                    aria-current="page"
+                    href="./home.html"
+                    >Trang chủ</a
+                  >
+                </li>
+
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Du lịch
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="./list-product-foreign.html"
+                        >Du lịch nước ngoài</a
+                      >
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="./list-product.html"
+                        >Du lịch trong nước</a
+                      >
+                    </li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li>
+                      <a class="dropdown-item" href="./list-product.html"
+                        >Tất cả</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./introduction.html">Giới thiệu</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./contact.html">Liên hệ</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./news.html">Tin tức</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./hot.html">Hot</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <div class="container">
+      <div class="row my-5">
+        <div class="col-lg-9">
+          <table class="table table-hover table-responsive">
+            <thead>
+              <th class="text-start">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="flexCheckDefault"
+                />
+                Sản phẩm
+              </th>
+              <th>Đơn giá</th>
+              <th>Số lượng</th>
+              <th>Thành tiền</th>
+              <th>Thao tác</th>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="d-flex gap-2 align-items-center">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="flexCheckDefault"
+                  />
+                  <img
+                    src="../images/img1.jpg"
+                    alt=""
+                    class="img-fluid"
+                    style="width: 50px; height: 50px"
+                  />
+                  <p>Tour hàn quốc</p>
+                </td>
+                <td class="">
+                  <p><del>100.000 vnđ</del> 99.000 vnđ</p>
+                </td>
+                <td class="">
+                  <div class="input-group d-flex align-items-center">
+                    <div class="input-group-text">-</div>
+                    1
+                    <div class="input-group-text">+</div>
+                  </div>
+                </td>
+                <td>
+                  <p>99.000 vnđ</p>
+                </td>
+                <td>
+                  <button
+                    class="btn"
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal"
+                  >
+                    <i
+                      style="
+                        font-size: 20px !important;
+                        cursor: pointer;
+                        color: red;
+                      "
+                      class="bi bi-trash"
+                    ></i>
+                  </button>
+                  <!-- Modal -->
+                  <div
+                    class="modal fade"
+                    id="exampleModal"
+                    tabindex="-1"
+                    aria-labelledby="exampleModalLabel"
+                    aria-hidden="true"
+                  >
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">
+                            Thông báo
+                          </h5>
+                          <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                          ></button>
+                        </div>
+                        <div class="modal-body">
+                          Bạn có chắc muốn xóa tour này không?
+                        </div>
+                        <div class="modal-footer">
+                          <button
+                            type="button"
+                            class="btn btn-secondary"
+                            data-bs-dismiss="modal"
+                          >
+                            Đóng
+                          </button>
+                          <button type="button" class="btn btn-danger">
+                            Xóa
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="d-flex gap-2">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="flexCheckDefault"
+                  />
+                  <img
+                    src="../images/img1.jpg"
+                    alt=""
+                    class="img-fluid"
+                    style="width: 50px; height: 50px"
+                  />
+                  <p>Tour hàn quốc</p>
+                </td>
+                <td>
+                  <p><del>100.000 vnđ</del> 99.000 vnđ</p>
+                </td>
+                <td class="">
+                  <div class="input-group d-flex align-items-center">
+                    <div class="input-group-text">-</div>
+                    1
+                    <div class="input-group-text">+</div>
+                  </div>
+                </td>
+                <td>
+                  <p>99.000 vnđ</p>
+                </td>
+                <td>
+                  <button
+                    class="btn"
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal"
+                  >
+                    <i
+                      style="
+                        font-size: 20px !important;
+                        cursor: pointer;
+                        color: red;
+                      "
+                      class="bi bi-trash"
+                    ></i>
+                  </button>
+                  <!-- Modal -->
+                  <div
+                    class="modal fade"
+                    id="exampleModal"
+                    tabindex="-1"
+                    aria-labelledby="exampleModalLabel"
+                    aria-hidden="true"
+                  >
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">
+                            Thông báo
+                          </h5>
+                          <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                          ></button>
+                        </div>
+                        <div class="modal-body">
+                          Bạn có chắc muốn xóa tour này không?
+                        </div>
+                        <div class="modal-footer">
+                          <button
+                            type="button"
+                            class="btn btn-secondary"
+                            data-bs-dismiss="modal"
+                          >
+                            Đóng
+                          </button>
+                          <button type="button" class="btn btn-danger">
+                            Xóa
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-lg-3">
+          <div class="card">
+            <div
+              class="card-header d-flex justify-content-between align-items-centerp-2"
+            >
+              <h3 style="font-size: 14px">TRAVEL Du lịch cùng bạn</h3>
+              <p>Có thể chọn 2</p>
+            </div>
+            <div class="card-body">
+              <p class="text-danger">Tổng tiền</p>
+            </div>
+            <div class="card-footer">
+              <!-- Button trigger modal -->
+              <button
+                type="button"
+                class="btn btn-danger w-100"
+                data-bs-toggle="modal"
+                data-bs-target="#thanhToan"
+              >
+                Thanh toán
+              </button>
+
+              <!-- Modal -->
+              <div
+                class="modal fade"
+                id="thanhToan"
+                tabindex="-1"
+                aria-labelledby="exampleModalLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="exampleModalLabel">
+                        Thanh toán
+                      </h1>
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div class="modal-body">
+                      <img
+                        src="https://pos.nvncdn.com/4e732c-26/art/artCT/20230808_XkvHDayV.png"
+                        alt=""
+                        class="img-fluid w-100 h-100"
+                      />
+                    </div>
+                    <div class="modal-footer">
+                      <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal"
+                      >
+                        Hủy
+                      </button>
+                      <button type="button" class="btn btn-primary">
+                        Thanh toán
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container py-4">
+      <h3 style="font-size: 25px">Có thể bạn sẽ thích</h3>
+      <hr class="py-1" />
+      <div class="row">
+        <article class="">
+          <div class="row mb-2">
+            <div class="col-sm-6 col-lg-2 col-md-4 mb-4">
+              <a href="./details.html" class="">
+                <div class="card border-0 position-relative">
+                  <div class="img-wrapper">
+                    <img
+                      src="../images/bg.jpg"
+                      class="d-block w-100 h-100 product-image"
+                      alt="../images/banner.png"
+                    />
+                  </div>
+                  <div
+                    class="card-body border rounded-0 p-0"
+                    style="box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.05)"
+                  >
+                    <h5
+                      class="card-header rounded-0"
+                      style="
+                        font-size: 16px;
+                        background: #f2f5f8;
+                        padding: 12px 6px;
+                        border: 0;
+                      "
+                    >
+                      Tour hè Hàn Quốc
+                    </h5>
+                    <div class="p-2">
+                      <p class="" style="margin-bottom: 0; font-size: 14px">
+                        <i class="bi bi-clock"></i>
+                        Lịch trình: 6 ngày 5 đêm
+                      </p>
+                      <p class="" style="margin-bottom: 0; font-size: 14px">
+                        <i class="bi bi-calendar-date-fill"></i>
+                        Khởi hành: 21/05/2024
+                      </p>
+                      <div class="">
+                        <p
+                          class="me-auto"
+                          style="margin-bottom: 0; font-size: 14px"
+                        >
+                          <i class="bi bi-person"></i>
+                          Số chỗ còn nhận: 10 chỗ
+                        </p>
+                        <p
+                          style="color: var(--primary-color)"
+                          class=""
+                          style="font-size: 18px; font-weight: bold"
+                        >
+                          24,499,000 đ
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-sm-6 col-lg-2 col-md-4 mb-4">
+              <a href="./details.html" class="">
+                <div class="card border-0 position-relative">
+                  <div class="img-wrapper">
+                    <img
+                      src="../images/bg.jpg"
+                      class="d-block w-100 h-100 product-image"
+                      alt="../images/banner.png"
+                    />
+                  </div>
+                  <div
+                    class="card-body border rounded-0 p-0"
+                    style="box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.05)"
+                  >
+                    <h5
+                      class="card-header rounded-0"
+                      style="
+                        font-size: 16px;
+                        background: #f2f5f8;
+                        padding: 12px 6px;
+                        border: 0;
+                      "
+                    >
+                      Tour hè Hàn Quốc
+                    </h5>
+                    <div class="p-2">
+                      <p class="" style="margin-bottom: 0; font-size: 14px">
+                        <i class="bi bi-clock"></i>
+                        Lịch trình: 6 ngày 5 đêm
+                      </p>
+                      <p class="" style="margin-bottom: 0; font-size: 14px">
+                        <i class="bi bi-calendar-date-fill"></i>
+                        Khởi hành: 21/05/2024
+                      </p>
+                      <div class="">
+                        <p
+                          class="me-auto"
+                          style="margin-bottom: 0; font-size: 14px"
+                        >
+                          <i class="bi bi-person"></i>
+                          Số chỗ còn nhận: 10 chỗ
+                        </p>
+                        <p
+                          style="color: var(--primary-color)"
+                          class=""
+                          style="font-size: 18px; font-weight: bold"
+                        >
+                          24,499,000 đ
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-sm-6 col-lg-2 col-md-4 mb-4">
+              <a href="./details.html" class="">
+                <div class="card border-0 position-relative">
+                  <div class="img-wrapper">
+                    <img
+                      src="../images/bg.jpg"
+                      class="d-block w-100 h-100 product-image"
+                      alt="../images/banner.png"
+                    />
+                  </div>
+                  <div
+                    class="card-body border rounded-0 p-0"
+                    style="box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.05)"
+                  >
+                    <h5
+                      class="card-header rounded-0"
+                      style="
+                        font-size: 16px;
+                        background: #f2f5f8;
+                        padding: 12px 6px;
+                        border: 0;
+                      "
+                    >
+                      Tour hè Hàn Quốc
+                    </h5>
+                    <div class="p-2">
+                      <p class="" style="margin-bottom: 0; font-size: 14px">
+                        <i class="bi bi-clock"></i>
+                        Lịch trình: 6 ngày 5 đêm
+                      </p>
+                      <p class="" style="margin-bottom: 0; font-size: 14px">
+                        <i class="bi bi-calendar-date-fill"></i>
+                        Khởi hành: 21/05/2024
+                      </p>
+                      <div class="">
+                        <p
+                          class="me-auto"
+                          style="margin-bottom: 0; font-size: 14px"
+                        >
+                          <i class="bi bi-person"></i>
+                          Số chỗ còn nhận: 10 chỗ
+                        </p>
+                        <p
+                          style="color: var(--primary-color)"
+                          class=""
+                          style="font-size: 18px; font-weight: bold"
+                        >
+                          24,499,000 đ
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-sm-6 col-lg-2 col-md-4 mb-4">
+              <a href="./details.html" class="">
+                <div class="card border-0 position-relative">
+                  <div class="img-wrapper">
+                    <img
+                      src="../images/bg.jpg"
+                      class="d-block w-100 h-100 product-image"
+                      alt="../images/banner.png"
+                    />
+                  </div>
+                  <div
+                    class="card-body border rounded-0 p-0"
+                    style="box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.05)"
+                  >
+                    <h5
+                      class="card-header rounded-0"
+                      style="
+                        font-size: 16px;
+                        background: #f2f5f8;
+                        padding: 12px 6px;
+                        border: 0;
+                      "
+                    >
+                      Tour hè Hàn Quốc
+                    </h5>
+                    <div class="p-2">
+                      <p class="" style="margin-bottom: 0; font-size: 14px">
+                        <i class="bi bi-clock"></i>
+                        Lịch trình: 6 ngày 5 đêm
+                      </p>
+                      <p class="" style="margin-bottom: 0; font-size: 14px">
+                        <i class="bi bi-calendar-date-fill"></i>
+                        Khởi hành: 21/05/2024
+                      </p>
+                      <div class="">
+                        <p
+                          class="me-auto"
+                          style="margin-bottom: 0; font-size: 14px"
+                        >
+                          <i class="bi bi-person"></i>
+                          Số chỗ còn nhận: 10 chỗ
+                        </p>
+                        <p
+                          style="color: var(--primary-color)"
+                          class=""
+                          style="font-size: 18px; font-weight: bold"
+                        >
+                          24,499,000 đ
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-sm-6 col-lg-2 col-md-4 mb-4">
+              <a href="./details.html" class="">
+                <div class="card border-0 position-relative">
+                  <div class="img-wrapper">
+                    <img
+                      src="../images/bg.jpg"
+                      class="d-block w-100 h-100 product-image"
+                      alt="../images/banner.png"
+                    />
+                  </div>
+                  <div
+                    class="card-body border rounded-0 p-0"
+                    style="box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.05)"
+                  >
+                    <h5
+                      class="card-header rounded-0"
+                      style="
+                        font-size: 16px;
+                        background: #f2f5f8;
+                        padding: 12px 6px;
+                        border: 0;
+                      "
+                    >
+                      Tour hè Hàn Quốc
+                    </h5>
+                    <div class="p-2">
+                      <p class="" style="margin-bottom: 0; font-size: 14px">
+                        <i class="bi bi-clock"></i>
+                        Lịch trình: 6 ngày 5 đêm
+                      </p>
+                      <p class="" style="margin-bottom: 0; font-size: 14px">
+                        <i class="bi bi-calendar-date-fill"></i>
+                        Khởi hành: 21/05/2024
+                      </p>
+                      <div class="">
+                        <p
+                          class="me-auto"
+                          style="margin-bottom: 0; font-size: 14px"
+                        >
+                          <i class="bi bi-person"></i>
+                          Số chỗ còn nhận: 10 chỗ
+                        </p>
+                        <p
+                          style="color: var(--primary-color)"
+                          class=""
+                          style="font-size: 18px; font-weight: bold"
+                        >
+                          24,499,000 đ
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-sm-6 col-lg-2 col-md-4 mb-4">
+              <a href="./details.html" class="">
+                <div class="card border-0 position-relative">
+                  <div class="img-wrapper">
+                    <img
+                      src="../images/bg.jpg"
+                      class="d-block w-100 h-100 product-image"
+                      alt="../images/banner.png"
+                    />
+                  </div>
+                  <div
+                    class="card-body border rounded-0 p-0"
+                    style="box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.05)"
+                  >
+                    <h5
+                      class="card-header rounded-0"
+                      style="
+                        font-size: 16px;
+                        background: #f2f5f8;
+                        padding: 12px 6px;
+                        border: 0;
+                      "
+                    >
+                      Tour hè Hàn Quốc
+                    </h5>
+                    <div class="p-2">
+                      <p class="" style="margin-bottom: 0; font-size: 14px">
+                        <i class="bi bi-clock"></i>
+                        Lịch trình: 6 ngày 5 đêm
+                      </p>
+                      <p class="" style="margin-bottom: 0; font-size: 14px">
+                        <i class="bi bi-calendar-date-fill"></i>
+                        Khởi hành: 21/05/2024
+                      </p>
+                      <div class="">
+                        <p
+                          class="me-auto"
+                          style="margin-bottom: 0; font-size: 14px"
+                        >
+                          <i class="bi bi-person"></i>
+                          Số chỗ còn nhận: 10 chỗ
+                        </p>
+                        <p
+                          style="color: var(--primary-color)"
+                          class=""
+                          style="font-size: 18px; font-weight: bold"
+                        >
+                          24,499,000 đ
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-sm-6 col-lg-2 col-md-4 mb-4">
+              <a href="./details.html" class="">
+                <div class="card border-0 position-relative">
+                  <div class="img-wrapper">
+                    <img
+                      src="../images/bg.jpg"
+                      class="d-block w-100 h-100 product-image"
+                      alt="../images/banner.png"
+                    />
+                  </div>
+                  <div
+                    class="card-body border rounded-0 p-0"
+                    style="box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.05)"
+                  >
+                    <h5
+                      class="card-header rounded-0"
+                      style="
+                        font-size: 16px;
+                        background: #f2f5f8;
+                        padding: 12px 6px;
+                        border: 0;
+                      "
+                    >
+                      Tour hè Hàn Quốc
+                    </h5>
+                    <div class="p-2">
+                      <p class="" style="margin-bottom: 0; font-size: 14px">
+                        <i class="bi bi-clock"></i>
+                        Lịch trình: 6 ngày 5 đêm
+                      </p>
+                      <p class="" style="margin-bottom: 0; font-size: 14px">
+                        <i class="bi bi-calendar-date-fill"></i>
+                        Khởi hành: 21/05/2024
+                      </p>
+                      <div class="">
+                        <p
+                          class="me-auto"
+                          style="margin-bottom: 0; font-size: 14px"
+                        >
+                          <i class="bi bi-person"></i>
+                          Số chỗ còn nhận: 10 chỗ
+                        </p>
+                        <p
+                          style="color: var(--primary-color)"
+                          class=""
+                          style="font-size: 18px; font-weight: bold"
+                        >
+                          24,499,000 đ
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-sm-6 col-lg-2 col-md-4 mb-4">
+              <a href="./details.html" class="">
+                <div class="card border-0 position-relative">
+                  <div class="img-wrapper">
+                    <img
+                      src="../images/bg.jpg"
+                      class="d-block w-100 h-100 product-image"
+                      alt="../images/banner.png"
+                    />
+                  </div>
+                  <div
+                    class="card-body border rounded-0 p-0"
+                    style="box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.05)"
+                  >
+                    <h5
+                      class="card-header rounded-0"
+                      style="
+                        font-size: 16px;
+                        background: #f2f5f8;
+                        padding: 12px 6px;
+                        border: 0;
+                      "
+                    >
+                      Tour hè Hàn Quốc
+                    </h5>
+                    <div class="p-2">
+                      <p class="" style="margin-bottom: 0; font-size: 14px">
+                        <i class="bi bi-clock"></i>
+                        Lịch trình: 6 ngày 5 đêm
+                      </p>
+                      <p class="" style="margin-bottom: 0; font-size: 14px">
+                        <i class="bi bi-calendar-date-fill"></i>
+                        Khởi hành: 21/05/2024
+                      </p>
+                      <div class="">
+                        <p
+                          class="me-auto"
+                          style="margin-bottom: 0; font-size: 14px"
+                        >
+                          <i class="bi bi-person"></i>
+                          Số chỗ còn nhận: 10 chỗ
+                        </p>
+                        <p
+                          style="color: var(--primary-color)"
+                          class=""
+                          style="font-size: 18px; font-weight: bold"
+                        >
+                          24,499,000 đ
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-sm-6 col-lg-2 col-md-4 mb-4">
+              <a href="./details.html" class="">
+                <div class="card border-0 position-relative">
+                  <div class="img-wrapper">
+                    <img
+                      src="../images/bg.jpg"
+                      class="d-block w-100 h-100 product-image"
+                      alt="../images/banner.png"
+                    />
+                  </div>
+                  <div
+                    class="card-body border rounded-0 p-0"
+                    style="box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.05)"
+                  >
+                    <h5
+                      class="card-header rounded-0"
+                      style="
+                        font-size: 16px;
+                        background: #f2f5f8;
+                        padding: 12px 6px;
+                        border: 0;
+                      "
+                    >
+                      Tour hè Hàn Quốc
+                    </h5>
+                    <div class="p-2">
+                      <p class="" style="margin-bottom: 0; font-size: 14px">
+                        <i class="bi bi-clock"></i>
+                        Lịch trình: 6 ngày 5 đêm
+                      </p>
+                      <p class="" style="margin-bottom: 0; font-size: 14px">
+                        <i class="bi bi-calendar-date-fill"></i>
+                        Khởi hành: 21/05/2024
+                      </p>
+                      <div class="">
+                        <p
+                          class="me-auto"
+                          style="margin-bottom: 0; font-size: 14px"
+                        >
+                          <i class="bi bi-person"></i>
+                          Số chỗ còn nhận: 10 chỗ
+                        </p>
+                        <p
+                          style="color: var(--primary-color)"
+                          class=""
+                          style="font-size: 18px; font-weight: bold"
+                        >
+                          24,499,000 đ
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-sm-6 col-lg-2 col-md-4 mb-4">
+              <a href="./details.html" class="">
+                <div class="card border-0 position-relative">
+                  <div class="img-wrapper">
+                    <img
+                      src="../images/bg.jpg"
+                      class="d-block w-100 h-100 product-image"
+                      alt="../images/banner.png"
+                    />
+                  </div>
+                  <div
+                    class="card-body border rounded-0 p-0"
+                    style="box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.05)"
+                  >
+                    <h5
+                      class="card-header rounded-0"
+                      style="
+                        font-size: 16px;
+                        background: #f2f5f8;
+                        padding: 12px 6px;
+                        border: 0;
+                      "
+                    >
+                      Tour hè Hàn Quốc
+                    </h5>
+                    <div class="p-2">
+                      <p class="" style="margin-bottom: 0; font-size: 14px">
+                        <i class="bi bi-clock"></i>
+                        Lịch trình: 6 ngày 5 đêm
+                      </p>
+                      <p class="" style="margin-bottom: 0; font-size: 14px">
+                        <i class="bi bi-calendar-date-fill"></i>
+                        Khởi hành: 21/05/2024
+                      </p>
+                      <div class="">
+                        <p
+                          class="me-auto"
+                          style="margin-bottom: 0; font-size: 14px"
+                        >
+                          <i class="bi bi-person"></i>
+                          Số chỗ còn nhận: 10 chỗ
+                        </p>
+                        <p
+                          style="color: var(--primary-color)"
+                          class=""
+                          style="font-size: 18px; font-weight: bold"
+                        >
+                          24,499,000 đ
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-sm-6 col-lg-2 col-md-4 mb-4">
+              <a href="./details.html" class="">
+                <div class="card border-0 position-relative">
+                  <div class="img-wrapper">
+                    <img
+                      src="../images/bg.jpg"
+                      class="d-block w-100 h-100 product-image"
+                      alt="../images/banner.png"
+                    />
+                  </div>
+                  <div
+                    class="card-body border rounded-0 p-0"
+                    style="box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.05)"
+                  >
+                    <h5
+                      class="card-header rounded-0"
+                      style="
+                        font-size: 16px;
+                        background: #f2f5f8;
+                        padding: 12px 6px;
+                        border: 0;
+                      "
+                    >
+                      Tour hè Hàn Quốc
+                    </h5>
+                    <div class="p-2">
+                      <p class="" style="margin-bottom: 0; font-size: 14px">
+                        <i class="bi bi-clock"></i>
+                        Lịch trình: 6 ngày 5 đêm
+                      </p>
+                      <p class="" style="margin-bottom: 0; font-size: 14px">
+                        <i class="bi bi-calendar-date-fill"></i>
+                        Khởi hành: 21/05/2024
+                      </p>
+                      <div class="">
+                        <p
+                          class="me-auto"
+                          style="margin-bottom: 0; font-size: 14px"
+                        >
+                          <i class="bi bi-person"></i>
+                          Số chỗ còn nhận: 10 chỗ
+                        </p>
+                        <p
+                          style="color: var(--primary-color)"
+                          class=""
+                          style="font-size: 18px; font-weight: bold"
+                        >
+                          24,499,000 đ
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-sm-6 col-lg-2 col-md-4 mb-4">
+              <a href="./details.html" class="">
+                <div class="card border-0 position-relative">
+                  <div class="img-wrapper">
+                    <img
+                      src="../images/bg.jpg"
+                      class="d-block w-100 h-100 product-image"
+                      alt="../images/banner.png"
+                    />
+                  </div>
+                  <div
+                    class="card-body border rounded-0 p-0"
+                    style="box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.05)"
+                  >
+                    <h5
+                      class="card-header rounded-0"
+                      style="
+                        font-size: 16px;
+                        background: #f2f5f8;
+                        padding: 12px 6px;
+                        border: 0;
+                      "
+                    >
+                      Tour hè Hàn Quốc
+                    </h5>
+                    <div class="p-2">
+                      <p class="" style="margin-bottom: 0; font-size: 14px">
+                        <i class="bi bi-clock"></i>
+                        Lịch trình: 6 ngày 5 đêm
+                      </p>
+                      <p class="" style="margin-bottom: 0; font-size: 14px">
+                        <i class="bi bi-calendar-date-fill"></i>
+                        Khởi hành: 21/05/2024
+                      </p>
+                      <div class="">
+                        <p
+                          class="me-auto"
+                          style="margin-bottom: 0; font-size: 14px"
+                        >
+                          <i class="bi bi-person"></i>
+                          Số chỗ còn nhận: 10 chỗ
+                        </p>
+                        <p
+                          style="color: var(--primary-color)"
+                          class=""
+                          style="font-size: 18px; font-weight: bold"
+                        >
+                          24,499,000 đ
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+    <footer
+      class="text-center text-lg-start bg-body-tertiary text-muted"
+      style="padding-top: 10px"
+    >
+      <!-- Section: Links  -->
+      <section class="">
+        <div class="container text-center text-md-start mt-5">
+          <!-- Grid row -->
+          <div class="row mt-3">
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+              <!-- Content -->
+              <h6 class="text-uppercase fw-bold mb-4">
+                <i class="fas fa-gem me-3"></i>TRAVEL
+              </h6>
+              <p>
+                Du lịch là tất cả về khám phá những địa điểm mới, văn hóa, ẩm
+                thực, nghi lễ và phong cách sống. Chúng ta cũng đi du lịch bởi
+                vì khoảng cách và sự khác biệt kích thích sự tò mò của tất cả,
+                điều mà chúng ta không thể quan sát bằng cách ngồi ở nhà.
+              </p>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold mb-4">MENU</h6>
+              <p>
+                <a href="./home.html" class="text-reset">Trang chủ</a>
+              </p>
+              <p>
+                <a href="./introduction.html" class="text-reset">Giới thiệu</a>
+              </p>
+              <p>
+                <a href="./contact.html" class="text-reset">Liên hệ</a>
+              </p>
+              <p>
+                <a href="./news.html" class="text-reset">Tin tức</a>
+              </p>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold mb-4">Social media</h6>
+              <p>
+                <a href="https://www.facebook.com/dihhyun" class="text-reset"
+                  >Facebook</a
+                >
+              </p>
+              <p>
+                <a href="https://www.facebook.com/dihhyun" class="text-reset"
+                  >Instagram</a
+                >
+              </p>
+              <p>
+                <a href="https://www.facebook.com/dihhyun" class="text-reset"
+                  >Zalo</a
+                >
+              </p>
+              <p>
+                <a href="https://www.facebook.com/dihhyun" class="text-reset"
+                  >Mail</a
+                >
+              </p>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold mb-4">Liên hệ</h6>
+              <p>
+                <i class="fas fa-home me-3"></i>Cao đẳng FPT Polytechnic Hồ Chí
+                Minh
+              </p>
+              <p>
+                <i class="fas fa-envelope me-3"></i>
+                huydqpc07859@fpt.edu.vn
+              </p>
+              <p><i class="fas fa-phone me-3"></i>0944242140</p>
+            </div>
+            <!-- Grid column -->
+          </div>
+          <!-- Grid row -->
+        </div>
+      </section>
+      <!-- Section: Links  -->
+      <section class="bg-body-tertiary text-center">
+        <!-- Grid container -->
+        <div class="container p-4">
+          <!-- Section: Images -->
+          <section class="">
+            <div class="row">
+              <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+                <div
+                  data-mdb-ripple-init
+                  class="bg-image hover-overlay shadow-1-strong rounded"
+                  data-ripple-color="light"
+                >
+                  <img
+                    src="../images/img1.jpg"
+                    class="w-100"
+                    style="height: 100px"
+                  />
+                  <a href="#!">
+                    <div
+                      class="mask"
+                      style="background-color: rgba(251, 251, 251, 0.2)"
+                    ></div>
+                  </a>
+                </div>
+              </div>
+              <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+                <div
+                  data-mdb-ripple-init
+                  class="bg-image hover-overlay shadow-1-strong rounded"
+                  data-ripple-color="light"
+                >
+                  <img
+                    src="../images/img2.jpg"
+                    class="w-100"
+                    style="height: 100px"
+                  />
+                  <a href="#!">
+                    <div
+                      class="mask"
+                      style="background-color: rgba(251, 251, 251, 0.2)"
+                    ></div>
+                  </a>
+                </div>
+              </div>
+              <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+                <div
+                  data-mdb-ripple-init
+                  class="bg-image hover-overlay shadow-1-strong rounded"
+                  data-ripple-color="light"
+                >
+                  <img
+                    src="../images/img3.jpg"
+                    class="w-100"
+                    style="height: 100px"
+                  />
+                  <a href="#!">
+                    <div
+                      class="mask"
+                      style="background-color: rgba(251, 251, 251, 0.2)"
+                    ></div>
+                  </a>
+                </div>
+              </div>
+              <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+                <div
+                  data-mdb-ripple-init
+                  class="bg-image hover-overlay shadow-1-strong rounded"
+                  data-ripple-color="light"
+                >
+                  <img
+                    src="../images/img4.jpg"
+                    class="w-100"
+                    style="height: 100px"
+                  />
+                  <a href="#!">
+                    <div
+                      class="mask"
+                      style="background-color: rgba(251, 251, 251, 0.2)"
+                    ></div>
+                  </a>
+                </div>
+              </div>
+              <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+                <div
+                  data-mdb-ripple-init
+                  class="bg-image hover-overlay shadow-1-strong rounded"
+                  data-ripple-color="light"
+                >
+                  <img
+                    src="../images/img5.jpg"
+                    class="w-100"
+                    style="height: 100px"
+                  />
+                  <a href="#!">
+                    <div
+                      class="mask"
+                      style="background-color: rgba(251, 251, 251, 0.2)"
+                    ></div>
+                  </a>
+                </div>
+              </div>
+              <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+                <div
+                  data-mdb-ripple-init
+                  class="bg-image hover-overlay shadow-1-strong rounded"
+                  data-ripple-color="light"
+                >
+                  <img
+                    src="../images/bg.webp"
+                    class="w-100"
+                    style="height: 100px"
+                  />
+                  <a href="#!">
+                    <div
+                      class="mask"
+                      style="background-color: rgba(251, 251, 251, 0.2)"
+                    ></div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- Section: Images -->
+        </div>
+        <!-- Grid container -->
+      </section>
+      <!-- Copyright -->
+      <div
+        class="text-center p-4"
+        style="background-color: rgba(0, 0, 0, 0.05)"
+      >
+        © 2024 Copyright:
+        <a class="text-reset fw-bold" href="https://mdbootstrap.com/"
+          >huydqpc07859@fpt.edu.vn</a
+        >
+      </div>
+      <!-- Copyright -->
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

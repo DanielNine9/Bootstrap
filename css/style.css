@@ -1,0 +1,360 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+/* 
+body{
+  font-size: 10px;
+
+} */
+
+.product .carousel-inner {
+  padding: 1em;
+}
+
+.product .carousel-control-prev,
+.product .carousel-control-next {
+  background-color: #e1e1e1;
+  width: 6vh;
+  height: 6vh;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@media (min-width: 1000px) {
+  .product .carousel-item {
+    margin-right: 0;
+    flex: 0 0 30.33333% !important;
+    /* display: flex; */
+  }
+  .product .carousel-inner {
+    display: flex;
+  }
+}
+@media (min-width: 794px) {
+  .product .carousel-item {
+    margin-right: 0;
+    flex: 0 0 50%;
+    display: flex;
+  }
+  .product .carousel-inner {
+    display: flex;
+  }
+}
+@media (max-width: 794px) {
+  .product .carousel-item {
+    margin-right: 0;
+    flex: 0 0 100%;
+    display: flex;
+  }
+  .product .carousel-inner {
+    display: flex;
+  }
+}
+
+/* InnerNational and outerNational */
+@media (min-width: 1000px) {
+  .product.innerNational .carousel-item,
+  .product.outerNational .carousel-item {
+    margin-right: 0;
+    flex: 0 0 24% !important;
+    display: flex;
+  }
+  .product .carousel-inner {
+    display: flex;
+  }
+}
+
+@media (max-width: 500px) {
+  .product.innerNational .carousel-item,
+  .product.outerNational .carousel-item {
+    margin-right: 0;
+    flex: 0 0 100%;
+    display: flex;
+  }
+  .product .carousel-inner {
+    display: flex;
+    gap: 0;
+    padding: 0;
+  }
+}
+
+.product .card .img-wrapper {
+  width: 100%;
+  height: 300px;
+}
+.product .card img {
+  height: 100%;
+}
+
+.product a {
+  text-decoration: none;
+}
+
+.product .card {
+  border-radius: 0;
+  cursor: pointer;
+}
+
+.product .carousel-item:hover .card {
+  border: 1px solid black !important;
+}
+
+.img-wrapper {
+  overflow: hidden;
+  position: relative;
+}
+
+.product-image {
+  transition: all 0.4s;
+}
+
+.img-wrapper::after {
+  /* content: "Từ Hố Chí Minh"; */
+  content: attr(data-location);
+
+  position: absolute;
+  top: 100%;
+  transform: translateY(-100%);
+  left: 0;
+  background: var(--primary-color);
+  z-index: 10;
+  padding: 10px 16px;
+  opacity: 0.7;
+  color: white;
+}
+
+.product .carousel-item:hover .product-image {
+  transform: scale(1.3);
+  -webkit-transform: scale(1.3);
+}
+
+.product .carousel-item {
+  transition: all 0.4s;
+}
+
+.product img:hover img {
+  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+}
+
+.product .carousel-inner {
+  display: flex;
+  gap: 10px;
+}
+
+:root {
+  --primary-color: #087dc2;
+  --primary-color-hover: #1ac2f3;
+}
+
+.heading {
+  background: var(--primary-color);
+  padding: 12px 0;
+  font-size: 12px;
+  color: white;
+}
+
+.heading .auth > div:hover {
+  cursor: pointer;
+  color: var(--primary-color-hover);
+  transition: color 0.5s;
+}
+
+.banner {
+  /* background-image: url('../images/img1.jpg'); */
+  background-position: center;
+  background-size: cover;
+  padding: 20%;
+  position: relative;
+  height: 100vh;
+  background-image: var(--bg-image);
+}
+
+.banner:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: black;
+  opacity: 0.4;
+}
+
+.overlay-banner {
+  position: absolute;
+  bottom: 61px;
+  left: 244px;
+}
+
+.btn.btn-primary {
+  background: var(--primary-color);
+  color: white;
+  outline: none;
+}
+
+.btn.btn-primary:hover {
+  background: var(--primary-color-hover);
+  color: whitesmoke;
+}
+
+.card-footer:hover {
+  color: var(--primary-color-hover);
+}
+
+.product .card-body {
+  padding: 0;
+}
+
+/* welcome */
+.welcome {
+  height: 500px;
+  background-image: url("https://www.vietourist.com.vn/public/frontend/uploads/kceditor/images/cuoc-xay-dung-kinh-thanh-cuoi-cung-cua-viet-nam-040809-min.jpg");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+}
+
+.welcome::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: black;
+  opacity: 0.2;
+}
+
+.welcome > div {
+  background: white;
+  padding: 10px 14px;
+  border-radius: 6px;
+  z-index: 99;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+  text-align: justify;
+  opacity: 0.8;
+}
+
+@keyframes btn_effect {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Foreign */
+
+.foreign {
+  background-image: url("https://ceodestinations.com/wp-content/uploads/2018/07/iStock-825341808-1280x640.jpg");
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+}
+
+/* Location */
+.location-container {
+  width: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+h3{
+  color: var(--primary-color)
+}
+.location-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  animation: scroll-left 20s linear infinite;
+  width: 100%;
+}
+.location-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  animation: scroll-right 20s linear infinite;
+  width: 100%;
+}
+
+.location-item {
+  border-radius: 50%;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+  border: 1px solid black;
+  width: 120px;
+  height: 120px;
+  background-image: url("../images/bg.jpg");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.tour-awesome .content:hover > div {
+  z-index: 2;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.tour-awesome .content > div {
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.tour-awesome .content::after {
+  content: "";
+  background: black;
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+@media (max-width: 1000px) {
+  .tour-awesome-wrapper {
+    display: none !important;
+  }
+}
+
+.nav-link.active{
+  color: var(--primary-color) !important;
+}
+
